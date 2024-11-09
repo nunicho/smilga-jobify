@@ -69,8 +69,7 @@ const router = createBrowserRouter([
       },
       {
         path: "dashboard",
-        element: <DashboardLayout />,
-        queryClient: { queryClient },
+        element: <DashboardLayout queryClient={queryClient} />,
         loader: dashboardLoader(queryClient),
         children: [
           {
@@ -88,7 +87,7 @@ const router = createBrowserRouter([
             path: "all-jobs",
             element: <AllJobs />,
             loader: allJobsLoader(queryClient),
-            errorElement:<ErrorElement />
+            errorElement: <ErrorElement />,
           },
           {
             path: "profile",
